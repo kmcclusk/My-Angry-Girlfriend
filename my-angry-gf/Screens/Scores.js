@@ -10,7 +10,7 @@ export default class Scores extends Component {
 	render() {
 		return(
 			<View>
-	          <Text>Kate</Text>
+	          <Text>Leader Board</Text>
 	        </View>
 		)
 	}

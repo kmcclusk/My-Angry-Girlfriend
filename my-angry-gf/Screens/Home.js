@@ -10,7 +10,7 @@ export default class Home extends Component {
 	render() {
 		return(
 			<View>
-	          <Text>Kate</Text>
+	          <Text>landing page</Text>
 	        </View>
 		)
 	}

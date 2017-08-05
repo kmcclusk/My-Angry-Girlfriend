@@ -12,6 +12,7 @@ import Home from './Screens/Home.js';
 import Matches from './Screens/Matches.js';
 import Scores from './Screens/Scores.js';
 
+var Day1 = require('./Day1.js');
 
 async function signInWithGoogleAsync() {
   try {
@@ -49,6 +50,7 @@ export default class App extends Component {
 
   render() {
     console.log(this.state);
+    console.log(Day1);
     if (this.state.appIsReady) {
       return(
         <Swiper style={styles.wrapper} 

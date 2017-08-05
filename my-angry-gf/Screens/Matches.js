@@ -10,7 +10,7 @@ export default class Matches extends Component {
 	render() {
 		return(
 			<View>
-	          <Text>Kate</Text>
+	          <Text>list of matches</Text>
 	        </View>
 		)
 	}
