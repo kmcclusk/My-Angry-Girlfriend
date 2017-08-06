@@ -74,7 +74,7 @@ export default class App extends Component {
         <View style={styles.slide3}>
           <ScoreHeader />
             <ScrollView>
-             <Scores />
+              <Scores />
             </ScrollView>
         </View>
       </Swiper>
@@ -120,8 +120,6 @@ const styles = StyleSheet.create({
   },
   slide3: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0)',
   },
   text: {
