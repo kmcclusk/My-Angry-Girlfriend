@@ -4,6 +4,7 @@ import {
   Text, 
   View, 
   TouchableOpacity, 
+  ScrollView,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Expo from 'expo';
@@ -11,6 +12,8 @@ import Expo from 'expo';
 import Home from './Screens/Home.js';
 import Matches from './Screens/Matches.js';
 import Scores from './Screens/Scores.js';
+
+import MatchHeader from './Components/MatchHeader.js';
 
 var Day1 = require('./Day1.js');
 
@@ -53,13 +56,16 @@ export default class App extends Component {
     console.log(Day1);
     if (this.state.appIsReady) {
       return(
-        <Swiper style={styles.wrapper} 
+        <Swiper 
         showsButtons={false}
         showsPagination={true}
         loop={false}
         index={1}>
         <View style={styles.slide1}>
-          <Matches />
+          <MatchHeader />
+            <ScrollView>
+              <Matches />
+            </ScrollView>
         </View>
         <View style={styles.slide2}>
           <Home />
@@ -72,9 +78,11 @@ export default class App extends Component {
     } else {
       return(
         <View style={styles.container}>
-          <TouchableOpacity onPress={()=>{this.signInWithGoogleAsync()}}>
-            <Text>Sign In</Text>
-          </TouchableOpacity>
+          <View style={styles.button}>
+            <TouchableOpacity onPress={()=>{this.signInWithGoogleAsync()}}>
+              <Text style={styles.text}>Login with Google+</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       );
    }
@@ -85,33 +93,36 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFC0CB',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-   wrapper: {
+  button: {
+    padding: 15,
+    backgroundColor: '#c9302c',
+    borderWidth: 0.7,
+    borderRadius: 3,
+    borderColor: '#ac2925'
   },
   slide1: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   slide2: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#97CAE5',
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   slide3: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#92BBD9',
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   text: {
     color: '#fff',
-    fontSize: 30,
+    fontSize: 12,
     fontWeight: 'bold',
   },
 });
