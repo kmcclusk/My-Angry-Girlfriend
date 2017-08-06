@@ -59,7 +59,7 @@ export default class App extends Component {
       return(
         <Swiper 
         showsButtons={false}
-        showsPagination={true}
+        showsPagination={false}
         loop={false}
         index={1}>
         <View style={styles.slide1}>
