@@ -14,6 +14,7 @@ import Matches from './Screens/Matches.js';
 import Scores from './Screens/Scores.js';
 
 import MatchHeader from './Components/MatchHeader.js';
+import ScoreHeader from './Components/ScoreHeader.js';
 
 var Day1 = require('./Day1.js');
 
@@ -71,7 +72,10 @@ export default class App extends Component {
           <Home />
         </View>
         <View style={styles.slide3}>
-          <Scores />
+          <ScoreHeader />
+            <ScrollView>
+             <Scores />
+            </ScrollView>
         </View>
       </Swiper>
       );

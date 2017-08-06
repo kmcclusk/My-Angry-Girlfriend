@@ -4,7 +4,14 @@ import {
   Text, 
   View, 
   TouchableOpacity, 
+  Alert,
 } from 'react-native';
+
+const showAlert = ()=> {
+	Alert.alert(
+  		'Swipe LEFT to play or RIGHT to view high scores',
+	)
+}
 
 export default class Home extends Component {
 	render() {

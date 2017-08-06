@@ -9,12 +9,12 @@ import {
 } from 'react-native';
 import { Components } from 'expo';
 
-export default class MatchHeader extends React.Component {
+export default class ScoreHeader extends React.Component {
 	render() {
 		return (
 			<View>
 					<View style={styles.bar}>
-						<Text style={styles.title}>Matches</Text>
+						<Text style={styles.title}>High Scores</Text>
 					</View>
 			</View>
 		);
