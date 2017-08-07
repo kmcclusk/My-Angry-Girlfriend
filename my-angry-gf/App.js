@@ -16,6 +16,7 @@ import Scores from './Screens/Scores.js';
 import MatchHeader from './Components/MatchHeader.js';
 import ScoreHeader from './Components/ScoreHeader.js';
 
+
 var Day1 = require('./Day1.js');
 
 async function signInWithGoogleAsync() {
@@ -40,6 +41,7 @@ async function signInWithGoogleAsync() {
     return {error: true};
   } 
 }
+  
 
 export default class App extends Component {
   constructor(props) {

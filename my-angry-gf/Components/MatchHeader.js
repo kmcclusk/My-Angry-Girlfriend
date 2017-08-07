@@ -10,6 +10,7 @@ import {
 import { Components } from 'expo';
 
 export default class MatchHeader extends React.Component {
+
 	render() {
 		return (
 			<View>
