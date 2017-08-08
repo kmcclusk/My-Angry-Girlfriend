@@ -10,7 +10,9 @@ import {
 import { Components } from 'expo';
 
 export default class MatchHeader extends React.Component {
-
+static navigationOptions = {
+    HeaderMode: 'none',
+  }
 	render() {
 		return (
 			<View>

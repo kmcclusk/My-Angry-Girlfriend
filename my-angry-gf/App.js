@@ -1,132 +1,24 @@
 import React, { Component } from 'react';
-import { 
-  StyleSheet, 
-  Text, 
-  View, 
-  TouchableOpacity, 
-  ScrollView,
-} from 'react-native';
-import Swiper from 'react-native-swiper';
-import Expo from 'expo';
+import { AppRegistry,View,Text,StyleSheet } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-import Home from './Screens/Home.js';
-import Matches from './Screens/Matches.js';
-import Scores from './Screens/Scores.js';
+import MainScreen from './Main.js';
 
-import MatchHeader from './Components/MatchHeader.js';
-import ScoreHeader from './Components/ScoreHeader.js';
+import DJScreen from './Screens/Texting/DJ.js';
+import KimmyScreen from './Screens/Texting/Kimmy.js';
+import StephanieScreen from './Screens/Texting/Stephanie.js';
+import MichelleScreen from './Screens/Texting/Michelle.js';
 
 
-var Day1 = require('./Day1.js');
+const nativeShop = StackNavigator(
+{
+  Main: { screen: MainScreen, },
+  DJ: { screen: DJScreen, },
+  Kimmy: { screen: KimmyScreen, },
+  Stephanie: { screen: StephanieScreen, },
+  Michelle: { screen: MichelleScreen, },
+},
+{ HeaderMode: 'screen' }
+);
 
-async function signInWithGoogleAsync() {
-  try {
-    const result = await Expo.Google.logInAsync({
-      androidClientId: "730266040886-hkuqs3mjblk148grsk0autr5816af4l2.apps.googleusercontent.com",
-      iosClientId: "730266040886-s6biuco47vuhkqfqdb60rj9q9h20u8g3.apps.googleusercontent.com",
-      scopes: ['profile', 'email'],
-    });
-    console.log(result);
-    if (result.type === 'success') {
-      this.setState({ appIsReady: true });
-      return result.accessToken;
-      
-    } else {
-      this.setState({ appIsReady: true })
-      return {cancelled: true};
-    }
-
-  } catch(e) {
-    console.log(e)
-    return {error: true};
-  } 
-}
-  
-
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.signInWithGoogleAsync = signInWithGoogleAsync.bind(this)
-
-    this.state = {
-      appIsReady: false
-    }
-  }
-
-  render() {
-    console.log(this.state);
-    console.log(Day1);
-    if (this.state.appIsReady) {
-      return(
-        <Swiper 
-        showsButtons={false}
-        showsPagination={false}
-        loop={false}
-        index={1}>
-        <View style={styles.slide1}>
-          <MatchHeader />
-            <ScrollView>
-              <Matches />
-            </ScrollView>
-        </View>
-        <View style={styles.slide2}>
-          <Home />
-        </View>
-        <View style={styles.slide3}>
-          <ScoreHeader />
-            <ScrollView>
-              <Scores />
-            </ScrollView>
-        </View>
-      </Swiper>
-      );
-    } else {
-      return(
-        <View style={styles.container}>
-          <View style={styles.button}>
-            <TouchableOpacity onPress={()=>{this.signInWithGoogleAsync()}}>
-              <Text style={styles.text}>Login with Google+</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      );
-   }
-  }
-}
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    padding: 15,
-    backgroundColor: '#c9302c',
-    borderWidth: 0.7,
-    borderRadius: 3,
-    borderColor: '#ac2925'
-  },
-  slide1: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0)',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0)',
-  },
-  slide3: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0)',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 12,
-    fontWeight: 'bold',
-  },
-});
+export default nativeShop;

@@ -4,24 +4,39 @@ import {
   Text, 
   View, 
   TouchableHighlight,
-  Navigator,
   Image,
+  AppRegistry,
 } from 'react-native';
 
-export default class Matches extends Component {
-	constructor(props) {
-    super(props);
-    this.state = { pressed: false }
-	}
+// import { StackNavigator } from 'react-navigation';
 
+// import DJScreen from './Texting/DJ.js';
+// import KimmyScreen from './Texting/Kimmy.js';
+// import StephanieScreen from './Texting/Stephanie.js';
+// import MichelleScreen from './Texting/Michelle.js';
+
+// const ModalStack = StackNavigator({
+// 	DJ: { 
+// 		screen: DJScreen,
+// 	},
+// 	Kimmy: { 
+// 		screen: KimmyScreen, 
+// 	},
+// 	Stephanie: { 
+// 		screen: StephanieScreen, 
+// 	},
+// 	Michelle: { 
+// 		screen: MichelleScreen, 
+// 	},
+// });
+
+export default class Matches extends Component {
 	render() {
+		const { navigate } = this.props.navigation;
 		return(
 			<View>
 			<View style = {styles.contactContainer}>
-	          <TouchableHighlight
-          		style={[ styles.button, this.state.pressed ? {backgroundColor: '#b2b2b2'} : {}]}
-      			onHideUnderlay={()=>{this.setState({pressed: false})}}
-      			onShowUnderlay={()=>{this.setState({pressed: true})}}>
+	          <TouchableHighlight onPress={() => navigate('DJ')}>
 	          	<View style = {styles.buttonWrapper}>
 	          		<Text style = {styles.buttonText}>
 	          			<Image source={require('../assets/icons/dj.png')} style={{width: 60, height:60}}/>
@@ -31,7 +46,7 @@ export default class Matches extends Component {
 	          </TouchableHighlight>
 	        </View>
 	        <View style = {styles.contactContainer}>
-	          <TouchableHighlight>
+	          <TouchableHighlight onPress={() => navigate('Kimmy')}>
 	          	<View style = {styles.buttonWrapper}>
 	          		<Text style = {styles.buttonText}>
 	          			<Image source={require('../assets/icons/kimmy.png')} style={{width: 60, height:60}}/>
@@ -41,7 +56,7 @@ export default class Matches extends Component {
 	          </TouchableHighlight>
 	        </View>
 	        <View style = {styles.contactContainer}>
-	          <TouchableHighlight>
+	          <TouchableHighlight onPress={() => navigate('Stephanie')}>
 	          	<View style = {styles.buttonWrapper}>
 	          		<Text style = {styles.buttonText}>
 		          		<Image source={require('../assets/icons/stephanie.png')} style={{width: 60, height:60}}/>
@@ -51,7 +66,7 @@ export default class Matches extends Component {
 	          </TouchableHighlight>
 	        </View>
 	        <View style = {styles.contactContainer}>
-	          <TouchableHighlight>
+	          <TouchableHighlight onPress={() => navigate('Michelle')}>
 	          	<View style = {styles.buttonWrapper}>
 	          		<Text style = {styles.buttonText}>
 		          		<Image source={require('../assets/icons/michelle.png')} style={{width: 60, height:60}}/>
@@ -65,6 +80,7 @@ export default class Matches extends Component {
 	}
 };
 
+AppRegistry.registerComponent('Matches', ()=> Matches);
 
 const styles = StyleSheet.create({
 	contactContainer: {
