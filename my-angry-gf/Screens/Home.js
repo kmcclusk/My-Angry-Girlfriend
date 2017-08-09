@@ -24,8 +24,8 @@ export default class Home extends Component {
 	            		<Image source={require('../assets/icons/swipeleft.png')} style={{paddingTop: 35, width: 125, height: 125, resizeMode: 'contain'}}/>
 	            		<Image source={require('../assets/icons/swiperight.png')} style={{paddingTop: 35, width: 125, height: 125, resizeMode: 'contain'}}/>
 	            	</Text>
-	            	<Text style = {styles.buttonText}>Swipe LEFT to play</Text>
-	            	<Text style = {styles.buttonText}>Swipe RIGHT to view leader board</Text>
+	            	<Text style = {styles.buttonText}>Swipe RIGHT to play</Text>
+	            	<Text style = {styles.buttonText}>Swipe LEFT to view leader board</Text>
 	            </View>
           	</View>
 		)
