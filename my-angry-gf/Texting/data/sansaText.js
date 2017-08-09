@@ -1,43 +1,22 @@
 module.exports = [
     {
         _id: 1,
-        text: "Text a response back: \n 1. Pizza? \n 2. I'm not really that hungry \n 3. Remember your diet! Be strong \n 4. What do you want to eat?",
+        text: "Text a response back: \n 1. Sure! \n 2. Maybe, I don't know? \n 3. No thanks \n 4. Definitely not, gross!",
         createdAt: new Date(),
         user: {
             _id: 2,
             name: 'Sansa',
-            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-YmxuTXlYWmhDYkU',
+            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-cVdKUVdrckhPQ1U',
         },
     },
     {
         _id: 0,
-        text: "I'm Hungry!",
+        text: "Hey! We're a match! Do you want to meet up?",
         createdAt: new Date(),
-        responses: [{
-                replyText1: "Pizza?",
-                sngerPoints: 0,
-                _id: 1
-            },
-            {
-                replyText2: "I'm not really that hungry",
-                angerPoints: -10,
-                _id: 2
-            },
-            {
-                replyText3: "Remember your diet! Be strong!",
-                angerPoints: -25,
-                _id: 3
-            },
-            {
-                replyText4: "What do you want to eat? :)",
-                angerPoints: -5,
-                _id: 4
-            }
-        ],
         user: {
             _id: 2,
             name: 'Sansa',
-            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-YmxuTXlYWmhDYkU',
+            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-cVdKUVdrckhPQ1U',
         },
     }
 ];

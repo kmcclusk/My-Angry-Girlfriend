@@ -31,7 +31,8 @@ export default class Scores extends Component {
         console.error(error);
       })
   }
-  // componentWillMount() {
+
+  // componentDidMount() {
   //     var data = {
   //        'username': this.props.username,
   //     }
@@ -67,7 +68,7 @@ console.log(this.props.username)
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
           	<View style={{flexDirection: 'row'}}>
-	          	<Text style={styles.playerText}>{rowData.playername}{this.props.username}</Text>
+	          	<Text style={styles.playerText}>{rowData.playername}</Text>
 	          	<Text style={styles.scoreText}>{rowData.score}</Text>
           	</View>
           }
