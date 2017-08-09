@@ -131,6 +131,7 @@ export default class MainScreen extends Component {
     } else {
       return(
         <View style={styles.container}>
+          <Image Image source={require('./assets/icons/app-icon-login-01.png')} style={{ height: 200, width: 200, marginBottom: 20}}/>
           <View style={styles.googleButton}>
             <TouchableOpacity onPress={()=>{this.signInWithGoogleAsync()}}>
               <Text style={styles.text}>Login with Google+</Text>
