@@ -105,7 +105,7 @@ export default class YgritteScreen extends Component {
 
           } else if (messages[0].text === "Pepperoni") {
             this.state.score = this.state.score - 5;
-            this.onReceive("I hate pepperoni, we are getting pineapple");
+            this.onReceive("Pepperoni is so greasy, we are getting veggie lovers");
             this.endGame();
             setTimeout(() => {
               this.onReceive("You should leave now to pick it up. My favorite pizzeria is 45 minutes away :)");
