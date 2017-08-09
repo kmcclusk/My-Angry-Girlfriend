@@ -46,9 +46,8 @@ export default class Scores extends Component {
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
           	<View style={{flexDirection: 'row'}}>
-	          	<Text style={styles.playerText}>{rowData.playername}</Text>
+	          	<Text style={styles.playerText}>{rowData.playername}{this.props.username}</Text>
 	          	<Text style={styles.scoreText}>{rowData.score}</Text>
-	          	<Text style={styles.numDays}>Days</Text>
           	</View>
           }
         />

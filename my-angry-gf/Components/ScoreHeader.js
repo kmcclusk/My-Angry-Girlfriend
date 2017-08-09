@@ -41,7 +41,7 @@ export default class ScoreHeader extends React.Component {
 
 const styles = StyleSheet.create({
   bar: {
-    backgroundColor:'#FBCFDC',
+    backgroundColor:'#FFD5FF',
     paddingTop:45,
     paddingBottom:20,
     alignItems: 'center',

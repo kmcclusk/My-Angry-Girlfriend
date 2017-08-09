@@ -30,7 +30,7 @@ async function signInWithGoogleAsync() {
     });
     console.log(result);
     if (result.type === 'success') {
-      this.setState({ appIsReady: true });
+      this.setState({ appIsReady: true, username: result.user.givenName });
       return result.accessToken;
       
     } else {
@@ -50,7 +50,8 @@ export default class MainScreen extends Component {
     super(props);
     this.signInWithGoogleAsync = signInWithGoogleAsync.bind(this)
     this.state = {
-      appIsReady: false
+      appIsReady: false,
+      username: null
     }
   }
 
@@ -75,7 +76,7 @@ export default class MainScreen extends Component {
           <ScrollView>
             <View>
             <View style = {styles.contactContainer}>
-            <TouchableHighlight onPress={() => navigate('DJ')}>
+            <TouchableHighlight onPress={() => navigate('DJ', {username: this.state.username})}>
               <View style = {styles.buttonWrapper}>
                 <Text style = {styles.buttonText}>
                   <Image source={require('./assets/icons/dj.png')} style={{width: 60, height:60}}/>
@@ -118,12 +119,13 @@ export default class MainScreen extends Component {
           </ScrollView>
         </View>
         <View style={styles.slide2}>
-          <Home />
+         <Home />
+
         </View>
         <View style={styles.slide3}>
           <ScoreHeader />
           <ScrollView>
-            <Scores />
+            <Scores username={this.state.username}/>
           </ScrollView>
         </View>
       </Swiper>
@@ -131,7 +133,7 @@ export default class MainScreen extends Component {
     } else {
       return(
         <View style={styles.container}>
-          <Image Image source={require('./assets/icons/app-icon-login-01.png')} style={{ height: 200, width: 200, marginBottom: 20}}/>
+          <Image Image source={require('./assets/icons/app-icon-login-01.png')} style={{ height: 150, width: 150, marginBottom: 20, resizeMode: 'contain'}}/>
           <View style={styles.googleButton}>
             <TouchableOpacity onPress={()=>{this.signInWithGoogleAsync()}}>
               <Text style={styles.text}>Login with Google+</Text>
