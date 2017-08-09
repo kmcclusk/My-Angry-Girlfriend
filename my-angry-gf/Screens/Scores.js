@@ -31,6 +31,27 @@ export default class Scores extends Component {
         console.error(error);
       })
   }
+  // componentWillMount() {
+  //     var data = {
+  //        'username': this.props.username,
+  //     }
+
+  //     fetch('https://radiant-river-84976.herokuapp.com/Scores', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body:  JSON.stringify(data)
+  //   })
+  //   .then(function(response){
+  //    return response.json();   
+  //   })
+  //   .then(function(data){ 
+  //   console.log(data)
+  //   });
+  // }
+
 	render() {
     if (this.state.isLoading) {
       return (
@@ -39,7 +60,7 @@ export default class Scores extends Component {
         </View>
       );
     }
-
+console.log(this.props.username)
    return (
       <View style={styles.scoreContainer}>
         <ListView

@@ -75,52 +75,51 @@ export default class MainScreen extends Component {
           <MatchHeader />
           <ScrollView>
             <View>
-            <View style = {styles.contactContainer}>
-            <TouchableHighlight onPress={() => navigate('DJ', {username: this.state.username})}>
-              <View style = {styles.buttonWrapper}>
-                <Text style = {styles.buttonText}>
-                  <Image source={require('./assets/icons/dj.png')} style={{width: 60, height:60}}/>
-                  <Text style={{textAlign: 'center'}}>   DJ</Text>
-                </Text>
+              <View style = {styles.contactContainer}>
+                <TouchableHighlight onPress={() => navigate('Daenerys', {username: this.state.username})}>
+                  <View style = {styles.buttonWrapper}>
+                    <Text style = {styles.buttonText}>
+                      <Image source={require('./assets/icons/d.png')} style={{width: 60, height:60}}/>
+                      <Text style={{textAlign: 'center'}}>   Daenerys</Text>
+                    </Text>
+                  </View>
+                </TouchableHighlight>
               </View>
-            </TouchableHighlight>
-          </View>
-          <View style = {styles.contactContainer}>
-            <TouchableHighlight onPress={() => navigate('Kimmy')}>
-              <View style = {styles.buttonWrapper}>
-                <Text style = {styles.buttonText}>
-                  <Image source={require('./assets/icons/kimmy.png')} style={{width: 60, height:60}}/>
-                  <Text style={{textAlign: 'center'}}>   Kimmy</Text>
-                </Text>
+              <View style = {styles.contactContainer}>
+                <TouchableHighlight onPress={() => navigate('Sansa')}>
+                  <View style = {styles.buttonWrapper}>
+                    <Text style = {styles.buttonText}>
+                      <Image source={require('./assets/icons/s.png')} style={{width: 60, height:60}}/>
+                      <Text style={{textAlign: 'center'}}>   Sansa</Text>
+                    </Text>
+                  </View>
+                </TouchableHighlight>
               </View>
-            </TouchableHighlight>
-          </View>
-          <View style = {styles.contactContainer}>
-            <TouchableHighlight onPress={() => navigate('Stephanie')}>
-              <View style = {styles.buttonWrapper}>
-                <Text style = {styles.buttonText}>
-                  <Image source={require('./assets/icons/stephanie.png')} style={{width: 60, height:60}}/>
-                  <Text style={{textAlign: 'center'}}>   Stephanie</Text>
-                </Text>
+              <View style = {styles.contactContainer}>
+                <TouchableHighlight onPress={() => navigate('Ygritte')}>
+                  <View style = {styles.buttonWrapper}>
+                    <Text style = {styles.buttonText}>
+                      <Image source={require('./assets/icons/ygritte.png')} style={{width: 60, height:60}}/>
+                      <Text style={{textAlign: 'center'}}>   Ygritte</Text>
+                    </Text>
+                  </View>
+                </TouchableHighlight>
               </View>
-            </TouchableHighlight>
-          </View>
-          <View style = {styles.contactContainer}>
-            <TouchableHighlight onPress={() => navigate('Michelle')}>
-              <View style = {styles.buttonWrapper}>
-                <Text style = {styles.buttonText}>
-                  <Image source={require('./assets/icons/michelle.png')} style={{width: 60, height:60}}/>
-                  <Text style={{textAlign: 'center'}}>   Michelle</Text>
-                </Text>
+              <View style = {styles.contactContainer}>
+                <TouchableHighlight onPress={() => navigate('Margaery')}>
+                  <View style = {styles.buttonWrapper}>
+                    <Text style = {styles.buttonText}>
+                      <Image source={require('./assets/icons/m.png')} style={{width: 60, height:60}}/>
+                      <Text style={{textAlign: 'center'}}>   Margaery</Text>
+                    </Text>
+                  </View>
+                </TouchableHighlight>
               </View>
-            </TouchableHighlight>
-          </View>
-          </View>
+            </View>
           </ScrollView>
         </View>
         <View style={styles.slide2}>
-         <Home />
-
+          <Home />
         </View>
         <View style={styles.slide3}>
           <ScoreHeader />

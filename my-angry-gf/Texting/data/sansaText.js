@@ -5,7 +5,7 @@ module.exports = [
         createdAt: new Date(),
         user: {
             _id: 2,
-            name: 'Kimmy',
+            name: 'Sansa',
             avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-YmxuTXlYWmhDYkU',
         },
     },
@@ -36,7 +36,7 @@ module.exports = [
         ],
         user: {
             _id: 2,
-            name: 'Kimmy',
+            name: 'Sansa',
             avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-YmxuTXlYWmhDYkU',
         },
     }

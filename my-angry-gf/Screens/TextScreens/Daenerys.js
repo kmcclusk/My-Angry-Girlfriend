@@ -6,9 +6,9 @@ import {
   AppRegistry,
 } from 'react-native';
 
-export default class DJScreen extends Component {
+export default class DaenerysScreen extends Component {
 	static navigationOptions = {
-		title: 'DJ',
+		title: 'Daenerys',
 	};
 
 	render() {
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
  }
 });
 
-AppRegistry.registerComponent('DJ', ()=> DJScreen);
+AppRegistry.registerComponent('Daenerys', ()=> DaenerysScreen);

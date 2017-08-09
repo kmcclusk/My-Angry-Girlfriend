@@ -6,9 +6,9 @@ import {
   AppRegistry,
 } from 'react-native';
 
-export default class MichelleScreen extends Component {
+export default class MargaeryScreen extends Component {
 	static navigationOptions = {
-		title: 'Michelle',
+		title: 'Margaery',
 	};
 
 	render() {
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
  }
 });
 
-AppRegistry.registerComponent('Michelle', ()=> MichelleScreen);
+AppRegistry.registerComponent('Margaery', ()=> MargaeryScreen);
