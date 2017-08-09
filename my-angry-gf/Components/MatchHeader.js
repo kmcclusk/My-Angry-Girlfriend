@@ -13,6 +13,10 @@ import {
 } from 'expo';
 
 export default class MatchHeader extends React.Component {
+  static navigationOptions = {
+    header: null,
+    footer: null,
+  }
   state = {
     fontLoaded: false,
   };

@@ -79,7 +79,7 @@ export default class MainScreen extends Component {
               <View style = {styles.buttonWrapper}>
                 <Text style = {styles.buttonText}>
                   <Image source={require('./assets/icons/dj.png')} style={{width: 60, height:60}}/>
-                  <Text style={{textAlign: 'center'}}>DJ</Text>
+                  <Text style={{textAlign: 'center'}}>   DJ</Text>
                 </Text>
               </View>
             </TouchableHighlight>
@@ -89,7 +89,7 @@ export default class MainScreen extends Component {
               <View style = {styles.buttonWrapper}>
                 <Text style = {styles.buttonText}>
                   <Image source={require('./assets/icons/kimmy.png')} style={{width: 60, height:60}}/>
-                  <Text style={{textAlign: 'center'}}>Kimmy</Text>
+                  <Text style={{textAlign: 'center'}}>   Kimmy</Text>
                 </Text>
               </View>
             </TouchableHighlight>
@@ -99,7 +99,7 @@ export default class MainScreen extends Component {
               <View style = {styles.buttonWrapper}>
                 <Text style = {styles.buttonText}>
                   <Image source={require('./assets/icons/stephanie.png')} style={{width: 60, height:60}}/>
-                  <Text style={{textAlign: 'center'}}>Stephanie</Text>
+                  <Text style={{textAlign: 'center'}}>   Stephanie</Text>
                 </Text>
               </View>
             </TouchableHighlight>
@@ -109,7 +109,7 @@ export default class MainScreen extends Component {
               <View style = {styles.buttonWrapper}>
                 <Text style = {styles.buttonText}>
                   <Image source={require('./assets/icons/michelle.png')} style={{width: 60, height:60}}/>
-                  <Text style={{textAlign: 'center'}}>Michelle</Text>
+                  <Text style={{textAlign: 'center'}}>   Michelle</Text>
                 </Text>
               </View>
             </TouchableHighlight>
@@ -177,6 +177,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   contactContainer: {
+    marginTop: 5,
     borderBottomWidth: 0.3,
     borderBottomColor: '#b2b2b2',
   },

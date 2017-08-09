@@ -18,7 +18,11 @@ const nativeShop = StackNavigator(
   Stephanie: { screen: StephanieScreen, },
   Michelle: { screen: MichelleScreen, },
 },
-{ HeaderMode: 'screen' }
+{ 
+  cardStyle: {
+    backgroundColor: '#fff',
+  }
+}
 );
 
 export default nativeShop;
