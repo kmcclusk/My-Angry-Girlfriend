@@ -7,17 +7,32 @@ import {
   Component,
   Image
 } from 'react-native';
-import { Components } from 'expo';
+import { 
+  Components,
+  Font,
+} from 'expo';
 
 export default class MatchHeader extends React.Component {
-static navigationOptions = {
-    HeaderMode: 'none',
+  state = {
+    fontLoaded: false,
+  };
+  async componentDidMount(){
+    await Font.loadAsync({
+      'Times_New_Romance': require('../assets/fonts/Times_New_Romance.ttf')
+    });
+    this.setState({ fontLoaded: true });
   }
 	render() {
 		return (
 			<View>
 					<View style={styles.bar}>
-						<Text style={styles.title}>Matches</Text>
+						{
+              this.state.fontLoaded ? (
+                <Text style={styles.title}>
+                  Matches
+                </Text>
+              ) : null
+            }
 					</View>
 			</View>
 		);
@@ -33,8 +48,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-  	fontSize: 30,
+    fontFamily: 'Times_New_Romance',
+  	fontSize: 45,
   	color: '#fff',
     backgroundColor:'rgba(0,0,0,0)',
   },
-})
+});

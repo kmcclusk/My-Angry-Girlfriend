@@ -43,21 +43,22 @@ async function signInWithGoogleAsync() {
     return {error: true};
   } 
 }
-  
+
 
 export default class MainScreen extends Component {
   constructor(props) {
     super(props);
-
     this.signInWithGoogleAsync = signInWithGoogleAsync.bind(this)
-
     this.state = {
       appIsReady: false
     }
   }
+
   static navigationOptions = {
     header: null,
+    footer: null,
   }
+
   render() {
     console.log(this.state);
     // console.log(Day1);

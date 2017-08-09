@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { 
   Text, 
   View,
-  Stylesheet,
+  StyleSheet,
   AppRegistry,
 } from 'react-native';
 
@@ -14,11 +14,17 @@ export default class StephanieScreen extends Component {
 	render() {
 		
 		return (
-			<View style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-				<Text>Stephanie</Text>
+			<View style={styles.container}>
 			</View>
 		)
 	}
 }
+
+const styles = StyleSheet.create({
+ container: {
+ 	flex: 1,
+ 	backgroundColor: '#fff',
+ }
+});
 
 AppRegistry.registerComponent('Stephanie', ()=> StephanieScreen);
