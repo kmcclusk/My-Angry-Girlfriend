@@ -18,8 +18,19 @@ import Scores from './Screens/Scores.js';
 import MatchHeader from './Components/MatchHeader.js';
 import ScoreHeader from './Components/ScoreHeader.js';
 
+// import * as firebase from 'firebase';
 
-// var Day1 = require('./Day1.js');
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCwb_wdgjVJYKQf_d83KduDyq4Lhgzj_PE",
+//   authDomain: "my-angry-girlfriend-1aafd.firebaseapp.com",
+//   databaseURL: "https://my-angry-girlfriend-1aafd.firebaseio.com",
+//   projectId: "my-angry-girlfriend-1aafd",
+//   storageBucket: "my-angry-girlfriend-1aafd.appspot.com",
+//   messagingSenderId: "616482913047"
+// };
+
+// firebase.initializeApp(firebaseConfig);
+
 
 async function signInWithGoogleAsync() {
   try {
@@ -51,7 +62,7 @@ export default class MainScreen extends Component {
     this.signInWithGoogleAsync = signInWithGoogleAsync.bind(this)
     this.state = {
       appIsReady: false,
-      username: null
+      username: null,
     }
   }
 
@@ -59,6 +70,12 @@ export default class MainScreen extends Component {
     header: null,
     footer: null,
   }
+
+  // componentWillMount(username, score) {
+  //   firebase.database().ref('users/' + username).set({
+  //     score: score
+  //   });
+  // }
 
   render() {
     console.log(this.state);
@@ -76,41 +93,41 @@ export default class MainScreen extends Component {
           <ScrollView>
             <View>
               <View style = {styles.contactContainer}>
-                <TouchableHighlight onPress={() => navigate('Daenerys', {username: this.state.username})}>
+                <TouchableHighlight onPress={() => navigate('Danni')} username = {this.state.username}>
                   <View style = {styles.buttonWrapper}>
                     <Text style = {styles.buttonText}>
                       <Image source={require('./assets/icons/d.png')} style={{width: 60, height:60}}/>
-                      <Text style={{textAlign: 'center'}}>   Daenerys</Text>
+                      <Text style={{textAlign: 'center'}}>   Danni</Text>
                     </Text>
                   </View>
                 </TouchableHighlight>
               </View>
               <View style = {styles.contactContainer}>
-                <TouchableHighlight onPress={() => navigate('Sansa')}>
+                <TouchableHighlight onPress={() => navigate('Sasha', {username: this.state.username})}>
                   <View style = {styles.buttonWrapper}>
                     <Text style = {styles.buttonText}>
                       <Image source={require('./assets/icons/s.png')} style={{width: 60, height:60}}/>
-                      <Text style={{textAlign: 'center'}}>   Sansa</Text>
+                      <Text style={{textAlign: 'center'}}>   Sasha</Text>
                     </Text>
                   </View>
                 </TouchableHighlight>
               </View>
               <View style = {styles.contactContainer}>
-                <TouchableHighlight onPress={() => navigate('Ygritte')}>
+                <TouchableHighlight onPress={() => navigate('Kelly', {username: this.state.username})}>
                   <View style = {styles.buttonWrapper}>
                     <Text style = {styles.buttonText}>
-                      <Image source={require('./assets/icons/ygritte.png')} style={{width: 60, height:60}}/>
-                      <Text style={{textAlign: 'center'}}>   Ygritte</Text>
+                      <Image source={require('./assets/icons/k.png')} style={{width: 60, height:60}}/>
+                      <Text style={{textAlign: 'center'}}>   Kelly</Text>
                     </Text>
                   </View>
                 </TouchableHighlight>
               </View>
               <View style = {styles.contactContainer}>
-                <TouchableHighlight onPress={() => navigate('Margaery')}>
+                <TouchableHighlight onPress={() => navigate('Madison', {username: this.state.username})}>
                   <View style = {styles.buttonWrapper}>
                     <Text style = {styles.buttonText}>
                       <Image source={require('./assets/icons/m.png')} style={{width: 60, height:60}}/>
-                      <Text style={{textAlign: 'center'}}>   Margaery</Text>
+                      <Text style={{textAlign: 'center'}}>   Madison</Text>
                     </Text>
                   </View>
                 </TouchableHighlight>

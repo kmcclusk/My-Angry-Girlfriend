@@ -5,8 +5,8 @@ module.exports = [
         createdAt: new Date(),
         user: {
             _id: 2,
-            name: 'Ygritte',
-            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-UGhyQUFKLXJILWc',
+            name: 'Kelly',
+            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-YmxuTXlYWmhDYkU',
         },
     },
     {
@@ -15,8 +15,8 @@ module.exports = [
         createdAt: new Date(),
         user: {
             _id: 2,
-            name: 'Ygritte',
-            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-UGhyQUFKLXJILWc',
+            name: 'Kelly',
+            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-YmxuTXlYWmhDYkU',
         },
     }
 ];

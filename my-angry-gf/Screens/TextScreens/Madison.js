@@ -11,12 +11,12 @@ import {GiftedChat, Actions, Bubble} from 'react-native-gifted-chat';
 import CustomActions from '../../Texting/CustomActions';
 import CustomView from '../../Texting/CustomView';
 
-export default class SansaScreen extends Component {
+export default class MadisonScreen extends Component {
 
-  static navigationOptions = {
-    title: 'Sansa',
-  };
-  constructor(props) {
+	static navigationOptions = {
+		title: 'Madison',
+	};
+	constructor(props) {
     super(props);
 
     this.state = {
@@ -41,7 +41,7 @@ export default class SansaScreen extends Component {
     this._isMounted = true;
     this.setState(() => {
       return {
-        messages: require('../../Texting/data/sansaText.js'),
+        messages: require('../../Texting/data/madisonText.js'),
       };
     });
   }
@@ -58,12 +58,12 @@ export default class SansaScreen extends Component {
   }
 
   answerDemo(messages) {
-    const{ navigate } = this.props.navigation;
+    const { navigate } = this.props.navigation;
     if (messages.length > 0) {
       if ((messages[0].image || messages[0].location) || messages[0].text || !this._isAlright) {
         this.setState((previousState) => {
           return {
-            typingText: 'Sansa is typing'
+            typingText: 'Madison is typing'
           };
         });
       }
@@ -74,136 +74,137 @@ export default class SansaScreen extends Component {
         if (messages.length > 0) {
 
 
-          if (messages[0].text === "Sure!") {
-            this.onReceive("Great, I'll see you tonight?");
+          if (messages[0].text === "On my way to your house") {
+            this.onReceive("Good. You should be");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("Where would you like to go?");
-              this.onReceive("Text a response back: \n 1. It's a surprise \n 2. To the new place that just opened. Super romantic \n 3. I dont't really care \n 4. Whatever you want");
+              this.onReceive("Make sure you look decent. I hate it when you come over looking like a slob");
+              this.onReceive("Text a response back: \n 1. Whatever you say \n 2. I'm wearing what you picked out \n 3. I'm wearing my birthday suit \n 4. I think I look fine");
             }, 1000);
-          } else if (messages[0].text === "Maybe, I don't know?") {
-            this.state.score = this.state.score - 5;
-            this.onReceive("You obvioulsy do. I'll see you tonight");
+          } else if (messages[0].text === "None of your business") {
+            this.state.score = this.state.score - 10;
+            this.onReceive('Everything is my business! Now hurry and get here');
             this.endGame();
             setTimeout(() => {
-              this.onReceive("Where would you like to go?");
-              this.onReceive("Text a response back: \n 1. It's a surprise \n 2. To the new place that just opened. Super romantic \n 3. I dont't really care \n 4. Whatever you want");
+              this.onReceive("Make sure you look decent. I hate it when you come over looking like a slob");
+              this.onReceive("Text a response back: \n 1. Whatever you say \n 2. I'm wearing what you picked out \n 3. I'm wearing my birthday suit \n 4. I think I look fine");
             }, 1000);
-          } else if (messages[0].text === "Definitely not, gross!") {
+          } else if (messages[0].text === "On a date") {
             this.state.score = this.state.score - 25;
-            this.onReceive('As if I would ever want to go out with someone as lowly as you!');
+            this.onReceive("Excuse me? I should be are the center of your universe. Get lost!");
             this.endGame();
-          } else if (messages[0].text === "No thanks") {
-            this.state.score = this.state.score - 10;
-            this.onReceive("I don't take no for an answer");
-            this.endGame();
-            setTimeout(() => {
-              this.onReceive("Where would you like to go?");
-              this.onReceive("Text a response back: \n 1. It's a surprise \n 2. To the new place that just opened. Super romantic \n 3. I dont't really care \n 4. Whatever you want");
-            }, 1000);
-
-
-          } else if (messages[0].text === "It's a surprise") {
+          } else if (messages[0].text === "At home") {
             this.state.score = this.state.score - 5;
-            this.onReceive("I don't like surprises, but whatever");
+            this.onReceive('Why? You should be here already.');
             this.endGame();
             setTimeout(() => {
-              this.onReceive("You better be taking me to a dinner and a show");
-              this.onReceive("Text a response back: \n 1. It's still a surprise \n 2. Maybe \n 3. I can't afford that right now \n 4. Anything for you");
-            }, 1000);
-          } else if (messages[0].text === "To the new place that just openeded. Super romantic") {
-            this.onReceive("That sounds nice. I better be good though");
-            this.endGame();
-            setTimeout(() => {
-              this.onReceive("You better be taking me to a dinner and a show");
-              this.onReceive("Text a response back: \n 1. It's still a surprise \n 2. Maybe \n 3. I can't afford that right now \n 4. Anything for you");
-            }, 1000);
-          } else if (messages[0].text === "I don't really care") {
-            this.state.score = this.state.score - 25;
-            this.onReceive("You are so lazy. Consider yourself dumped.");
-            this.endGame();
-          } else if (messages[0].text === "Whatever you want") {
-            this.state.score = this.state.score - 10;
-            this.onReceive("You're not putting in any effort. You're taking me everywhere then");
-            this.endGame();
-            setTimeout(() => {
-              this.onReceive("You better be taking me to a dinner and a show");
-              this.onReceive("Text a response back: \n 1. It's still a surprise \n 2. Maybe \n 3. I can't afford that right now \n 4. Anything for you");
+              this.onReceive("Make sure you look decent. I hate it when you come over looking like a slob");
+              this.onReceive("Text a response back: \n 1. Whatever you say \n 2. I'm wearing what you picked out \n 3. I'm wearing my birthday suit \n 4. I think I look fine");
             }, 1000);
 
 
-          } else if (messages[0].text === "It's still a surprise") {
+          } else if (messages[0].text === "Whatever you say") {
             this.state.score = this.state.score - 5;
-            this.onReceive("Again, I don't like surprise. You're on thin ice");
+            this.onReceive("You're right, it is whatever I say. So make sure you change!");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("You also need to pick me up in a luxury car. I deserve the best");
-              this.onReceive("Text a response back: \n 1. I think that is a little much \n 2. I drive a minivan \n 3. I already own a Porsche \n 4. I'll stop by the rental lot");
+              this.onReceive("Also, pick up some flowers and make them expensive!");
+              this.onReceive("Text a response back: \n 1. Why? \n 2. I'm allergic to flowers \n 3. That just seems unnecessary \n 4. Already bringing some daisies");
             }, 1000);
-          } else if (messages[0].text === "Maybe") {
-            this.state.score = this.state.score - 10;
-            this.onReceive("Maybe? You sound feeble and week. Be more confident");
+          } else if (messages[0].text === "I'm wearing what you picked out") {
+            this.onReceive("Great, though I'm still certain you're going to manage to make it look bad");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("You also need to pick me up in a luxury car. I deserve the best");
-              this.onReceive("Text a response back: \n 1. I think that is a little much \n 2. I drive a minivan \n 3. I already own a Porsche \n 4. I'll stop by the rental lot");
+              this.onReceive("Also, pick up some flowers and make them expensive!");
+              this.onReceive("Text a response back: \n 1. Why? \n 2. I'm allergic to flowers \n 3. That just seems unnecessary \n 4. Already bringing some daisies");
             }, 1000);
-          } else if (messages[0].text === "I can't afford that right now") {
+          } else if (messages[0].text === "I'm wearing my birthday suit") {
             this.state.score = this.state.score - 25;
-            this.onReceive("Really!? You are such a scrub. Bye!");
+            this.onReceive("You are such a perve. I need to be with someone who is going to take me seriously");
             this.endGame();
-          } else if (messages[0].text === "Anything for you") {
-            this.onReceive("Perfect");
+          } else if (messages[0].text === "I think I look fine") {
+            this.state.score = this.state.score - 10;
+            this.onReceive("You don't think, you do as I tell you and fine isn't good enough");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("You also need to pick me up in a luxury car. I deserve the best");
-              this.onReceive("Text a response back: \n 1. I think that is a little much \n 2. I drive a minivan \n 3. I already own a Porsche \n 4. I'll stop by the rental lot");
+              this.onReceive("Also, pick up some flowers and make them expensive!");
+              this.onReceive("Text a response back: \n 1. Why? \n 2. I'm allergic to flowers \n 3. That just seems unnecessary \n 4. Already bringing some daisies");
             }, 1000);
 
 
-          } else if (messages[0].text === "I think that is a little much") {
-            this.state.score = this.state.score - 10;
-            this.onReceive("You're a little much. I'm worth it");
+          } else if (messages[0].text === "Why?") {
+            this.state.score = this.state.score - 5;
+            this.onReceive("Don't worry about why, just do it");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("This isn't going to work, you're just not on my level");
+              this.onReceive("I was going to let this be a surprise, but my parents are here and I want you to meet them");
+              this.onReceive("Text a response back: \n 1. What? \n 2. I think it's way too soon for that \n 3. I can't wait! \n 4. I don't know about this");
+            }, 1000);
+          } else if (messages[0].text === "I'm allergic to flowers") {
+            this.state.score = this.state.score - 10;
+            this.onReceive("You can suck it up, I want flowers");
+            this.endGame();
+            setTimeout(() => {
+              this.onReceive("I was going to let this be a surprise, but my parents are here and I want you to meet them");
+              this.onReceive("Text a response back: \n 1. What? \n 2. I think it's way too soon for that \n 3. I can't wait! \n 4. I don't know about this");
+            }, 1000);
+          } else if (messages[0].text === "That just seems unnecessary") {
+            this.state.score = this.state.score - 25;
+            this.onReceive("You're unnecessary, I can't deal with you anymore. We're done");
+            this.endGame();
+          } else if (messages[0].text === "Already bringing some daisies") {
+            this.onReceive("Daisies are so tacky, but whatever");
+            this.endGame();
+            setTimeout(() => {
+              this.onReceive("I was going to let this be a surprise, but my parents are here and I want you to meet them");
+              this.onReceive("Text a response back: \n 1. What? \n 2. I think it's way too soon for that \n 3. I can't wait! \n 4. I don't know about this");
+            }, 1000);
+
+
+          } else if (messages[0].text === "What?") {
+            this.state.score = this.state.score - 10;
+            this.onReceive("Don't what me! You can be so annoying sometimes");
+            this.endGame();
+            setTimeout(() => {
+              this.onReceive("You just seem so empty-headed sometimes. We're not going to work");
               this.onReceive("Score: " + this.state.score + " out of 25");
               setTimeout(() => {
                 navigate("Main");
               }, 5000);
             }, 1000);
-          } else if (messages[0].text === "I drive a minivan") {
+          } else if (messages[0].text === "I think it's way too soon for that") {
             this.state.score = this.state.score - 25;
-            this.onReceive("Um... no");
+            this.onReceive("You are such a cry baby!");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("This isn't going to work, you're just not on my level");
+              this.onReceive("I don't your nagging in my life. I'm leaving you");
               this.onReceive("Score: " + this.state.score + " out of 25");
               setTimeout(() => {
                 navigate("Main");
               }, 5000);
             }, 1000);
-          } else if (messages[0].text === "I already own a Porsche") {
-            this.onReceive("Wow!");
+          } else if (messages[0].text === "I can't wait!") {
+            this.onReceive("I just hope you impress them");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("This isn't going to work, you're just too extra");
+              this.onReceive("My actaully don't like you and I agree. I deserve better. We're done!");
               this.onReceive("Score: " + this.state.score + " out of 25");
               setTimeout(() => {
                 navigate("Main");
               }, 5000);
             }, 1000);
-          } else if (messages[0].text === "I'll stop by the rental lot") {
+          } else if (messages[0].text === "I don't know about this") {
             this.state.score = this.state.score - 5;
-            this.onReceive("Really? A rental? Okay");
+            this.onReceive("Since when do you know anything, just get here");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("This isn't going to work, you're just not on my level");
+              this.onReceive("You're not worth my timne. Don't bother coming. We're through.");
               this.onReceive("Score: " + this.state.score + " out of 25");
               setTimeout(() => {
                 navigate("Main");
               }, 5000);
             }, 1000);
+
 
 
           } else if (messages[0].text === "Score") {
@@ -211,7 +212,7 @@ export default class SansaScreen extends Component {
           }else {
             if (!this._isAlright) {
               this._isAlright = true;
-              this.onReceive('Are you stupid?');
+              this.onReceive('Umm... wow. Okay...');
             }
           }
         }
@@ -233,8 +234,8 @@ export default class SansaScreen extends Component {
           createdAt: new Date(),
           user: {
             _id: 2,
-            name: 'Sansa',
-            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-cVdKUVdrckhPQ1U',
+            name: 'Madison',
+            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-c3FJUmNzMVpkcTg',
           },
         }),
       };
@@ -245,7 +246,7 @@ export default class SansaScreen extends Component {
     const {navigate} = this.props.navigation;
     if (this.state.score <= 0) {
       setTimeout(() => {
-        this.onReceive("I'm a queen and you're a peasant. This will never work");
+        this.onReceive("I need someone who is going to compeltely devote themselves to me and you're not it.");
         this.onReceive("Score: " + this.state.score + " out of 25");
       }, 1000);
       setTimeout(() => {
@@ -349,4 +350,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('Sansa', ()=> SansaScreen);
+AppRegistry.registerComponent('Madison', ()=> MadisonScreen);

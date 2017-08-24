@@ -11,9 +11,9 @@ import {GiftedChat, Actions, Bubble} from 'react-native-gifted-chat';
 import CustomActions from '../../Texting/CustomActions';
 import CustomView from '../../Texting/CustomView';
 
-export default class YgritteScreen extends Component {
+export default class KellyScreen extends Component {
 	static navigationOptions = {
-		title: 'Ygritte',
+		title: 'Kelly',
 	};
 	
 	constructor(props) {
@@ -41,7 +41,7 @@ export default class YgritteScreen extends Component {
     this._isMounted = true;
     this.setState(() => {
       return {
-        messages: require('../../Texting/data/ygritteText.js'),
+        messages: require('../../Texting/data/kellyText.js'),
       };
     });
   }
@@ -63,7 +63,7 @@ export default class YgritteScreen extends Component {
       if ((messages[0].image || messages[0].location) || messages[0].text || !this._isAlright) {
         this.setState((previousState) => {
           return {
-            typingText: 'Ygritte is typing'
+            typingText: 'Kelly is typing'
           };
         });
       }
@@ -233,8 +233,8 @@ export default class YgritteScreen extends Component {
           createdAt: new Date(),
           user: {
             _id: 2,
-            name: 'Ygritte',
-            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-UGhyQUFKLXJILWc',
+            name: 'Yvette',
+            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-YmxuTXlYWmhDYkU',
           },
         }),
       };
@@ -349,4 +349,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('Ygritte', ()=> YgritteScreen);
+AppRegistry.registerComponent('Kelly', ()=> KellyScreen);

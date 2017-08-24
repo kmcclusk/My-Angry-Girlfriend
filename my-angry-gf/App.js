@@ -4,19 +4,19 @@ import { StackNavigator } from 'react-navigation';
 
 import MainScreen from './Main.js';
 
-import DaenerysScreen from './Screens/TextScreens/Daenerys.js';
-import SansaScreen from './Screens/TextScreens/Sansa.js';
-import YgritteScreen from './Screens/TextScreens/Ygritte.js';
-import MargaeryScreen from './Screens/TextScreens/Margaery.js';
+import DanniScreen from './Screens/TextScreens/Danni.js';
+import SashaScreen from './Screens/TextScreens/Sasha.js';
+import KellyScreen from './Screens/TextScreens/Kelly.js';
+import MadisonScreen from './Screens/TextScreens/Madison.js';
 
 
 const nativeShop = StackNavigator(
 {
   Main: { screen: MainScreen, },
-  Daenerys: { screen: DaenerysScreen, },
-  Sansa: { screen: SansaScreen, },
-  Ygritte: { screen: YgritteScreen, },
-  Margaery: { screen: MargaeryScreen, },
+  Danni: { screen: DanniScreen, },
+  Sasha: { screen: SashaScreen, },
+  Kelly: { screen: KellyScreen, },
+  Madison: { screen: MadisonScreen, },
 },
 { 
   cardStyle: {

@@ -11,10 +11,11 @@ import {GiftedChat, Actions, Bubble} from 'react-native-gifted-chat';
 import CustomActions from '../../Texting/CustomActions';
 import CustomView from '../../Texting/CustomView';
 
-export default class MargaeryScreen extends Component {
+
+export default class DanniScreen extends Component {
 
 	static navigationOptions = {
-		title: 'Margaery',
+		title: 'Danni',
 	};
 	constructor(props) {
     super(props);
@@ -41,7 +42,7 @@ export default class MargaeryScreen extends Component {
     this._isMounted = true;
     this.setState(() => {
       return {
-        messages: require('../../Texting/data/margaeryText.js'),
+        messages: require('../../Texting/data/danniText.js'),
       };
     });
   }
@@ -63,7 +64,7 @@ export default class MargaeryScreen extends Component {
       if ((messages[0].image || messages[0].location) || messages[0].text || !this._isAlright) {
         this.setState((previousState) => {
           return {
-            typingText: 'Margaery is typing'
+            typingText: 'Danni is typing'
           };
         });
       }
@@ -74,131 +75,132 @@ export default class MargaeryScreen extends Component {
         if (messages.length > 0) {
 
 
-          if (messages[0].text === "On my way to your house") {
-            this.onReceive("Good. You should be");
+          
+          if (messages[0].text === "No, not at all") {
+            this.onReceive("You have to say that cause we're dating");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("Make sure you look decent. I hate it when you come over looking like a slob");
-              this.onReceive("Text a response back: \n 1. Whatever you say \n 2. I'm wearing what you picked out \n 3. I'm wearing my birthday suit \n 4. I think I look fine");
+              this.onReceive("I think we should start exercising together");
+              this.onReceive("Text a response back: \n 1. I think that's a great idea \n 2. Sure! \n 3. I think I'm fine \n 4. I don't have the time");
             }, 1000);
-          } else if (messages[0].text === "None of your business") {
+          } else if (messages[0].text === "It never matters what I think") {
             this.state.score = this.state.score - 10;
-            this.onReceive('Everything is my business! Now hurry and get here');
+            this.onReceive("Why can't you ever be helpful just once");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("Make sure you look decent. I hate it when you come over looking like a slob");
-              this.onReceive("Text a response back: \n 1. Whatever you say \n 2. I'm wearing what you picked out \n 3. I'm wearing my birthday suit \n 4. I think I look fine");
+              this.onReceive("I think we should start exercising together");
+              this.onReceive("Text a response back: \n 1. I think that's a great idea \n 2. Sure! \n 3. I think I'm fine \n 4. I don't have the time");
             }, 1000);
-          } else if (messages[0].text === "On a date") {
+          } else if (messages[0].text === "If you feel fat, try exercising") {
             this.state.score = this.state.score - 25;
-            this.onReceive("Excuse me? I should be are the center of your universe. Get lost!");
+            this.onReceive("Are you serious? You think I'm fat!!!!!");
             this.endGame();
-          } else if (messages[0].text === "At home") {
+          } else if (messages[0].text === "I think you always look great") {
             this.state.score = this.state.score - 5;
-            this.onReceive('Why? You should be here already.');
+            this.onReceive(" I know that. I don't need you to tell me that.");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("Make sure you look decent. I hate it when you come over looking like a slob");
-              this.onReceive("Text a response back: \n 1. Whatever you say \n 2. I'm wearing what you picked out \n 3. I'm wearing my birthday suit \n 4. I think I look fine");
+              this.onReceive("I think we should start exercising together");
+              this.onReceive("Text a response back: \n 1. I think that's a great idea \n 2. Sure! \n 3. I think I'm fine \n 4. I don't have the time");
             }, 1000);
 
 
-          } else if (messages[0].text === "Whatever you say") {
+          } else if (messages[0].text === "I think that's a great idea") {
             this.state.score = this.state.score - 5;
-            this.onReceive("You're right, it is whatever I say. So make sure you change!");
+            this.onReceive("You seem a little too eager. I don't like that");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("Also, pick up some flowers and make them expensive!");
-              this.onReceive("Text a response back: \n 1. Why? \n 2. I'm allergic to flowers \n 3. That just seems unnecessary \n 4. Already bringing some daisies");
+              this.onReceive("What kind of class show we take? I'm thinking hot yoga");
+              this.onReceive("Text a response back: \n 1. I guess that sounds okay \n 2. What about kick-boxing? \n 3. I hate yoga \n 4. I'm down for some yoga");
             }, 1000);
-          } else if (messages[0].text === "I'm wearing what you picked out") {
-            this.onReceive("Great, though I'm still certain you're going to manage to make it look bad");
+          } else if (messages[0].text === "Sure!") {
+            this.onReceive("Wow, so you really think I need to lose weight. Whatever");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("Also, pick up some flowers and make them expensive!");
-              this.onReceive("Text a response back: \n 1. Why? \n 2. I'm allergic to flowers \n 3. That just seems unnecessary \n 4. Already bringing some daisies");
+              this.onReceive("What kind of class show we take? I'm thinking hot yoga");
+              this.onReceive("Text a response back: \n 1. I guess that sounds okay \n 2. What about kick-boxing? \n 3. I hate yoga \n 4. I'm down for some yoga");
             }, 1000);
-          } else if (messages[0].text === "I'm wearing my birthday suit") {
+          } else if (messages[0].text === "I think I'm fine") {
             this.state.score = this.state.score - 25;
-            this.onReceive("You are such a perve. I need to be with someone who is going to take me seriously");
+            this.onReceive("Fine? You are far from fine. I'm fine with us being over");
             this.endGame();
-          } else if (messages[0].text === "I think I look fine") {
+          } else if (messages[0].text === "I don't have the time") {
             this.state.score = this.state.score - 10;
-            this.onReceive("You don't think, you do as I tell you and fine isn't good enough");
+            this.onReceive("Well make the time. We're doing this together");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("Also, pick up some flowers and make them expensive!");
-              this.onReceive("Text a response back: \n 1. Why? \n 2. I'm allergic to flowers \n 3. That just seems unnecessary \n 4. Already bringing some daisies");
+              this.onReceive("What kind of class show we take? I'm thinking hot yoga");
+              this.onReceive("Text a response back: \n 1. I guess that sounds okay \n 2. What about kick-boxing? \n 3. I hate yoga \n 4. I'm down for some yoga");
             }, 1000);
 
 
-          } else if (messages[0].text === "Why?") {
+          } else if (messages[0].text === "I guess that sounds okay") {
             this.state.score = this.state.score - 5;
-            this.onReceive("Don't worry about why, just do it");
+            this.onReceive("Trust me, you need it");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("I was going to let this be a surprise, but my parents are here and I want you to meet them");
-              this.onReceive("Text a response back: \n 1. What? \n 2. I think it's way too soon for that \n 3. I can't wait! \n 4. I don't know about this");
+              this.onReceive("Also let's get matching workout outfits. It'll be cute!");
+              this.onReceive("Text a response back: \n 1. I already have workout clothes \n 2. Anything for you \n 3. I think that's cheesy \n 4. LOL");
             }, 1000);
-          } else if (messages[0].text === "I'm allergic to flowers") {
+          } else if (messages[0].text === "What about kick-boxing?") {
             this.state.score = this.state.score - 10;
-            this.onReceive("You can suck it up, I want flowers");
+            this.onReceive("As if! We're doing yoga!");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("I was going to let this be a surprise, but my parents are here and I want you to meet them");
-              this.onReceive("Text a response back: \n 1. What? \n 2. I think it's way too soon for that \n 3. I can't wait! \n 4. I don't know about this");
+              this.onReceive("Also let's get matching workout outfits. It'll be cute!");
+              this.onReceive("Text a response back: \n 1. I already have workout clothes \n 2. Anything for you \n 3. I think that's cheesy \n 4. LOL");
             }, 1000);
-          } else if (messages[0].text === "That just seems unnecessary") {
+          } else if (messages[0].text === "I hate yoga") {
             this.state.score = this.state.score - 25;
-            this.onReceive("You're unnecessary, I can't deal with you anymore. We're done");
+            this.onReceive("Well I hate your attitude, and I don't need it anymore");
             this.endGame();
-          } else if (messages[0].text === "Already bringing some daisies") {
-            this.onReceive("Daisies are so tacky, but whatever");
+          } else if (messages[0].text === "I'm down for some yoga") {
+            this.onReceive("Good, cause it's what we're doing");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("I was going to let this be a surprise, but my parents are here and I want you to meet them");
-              this.onReceive("Text a response back: \n 1. What? \n 2. I think it's way too soon for that \n 3. I can't wait! \n 4. I don't know about this");
+              this.onReceive("Also let's get matching workout outfits. It'll be cute!");
+              this.onReceive("Text a response back: \n 1. I already have workout clothes \n 2. Anything for you \n 3. I think that's cheesy \n 4. LOL");
             }, 1000);
 
 
-          } else if (messages[0].text === "What?") {
+          } else if (messages[0].text === "I already have workout clothes") {
             this.state.score = this.state.score - 10;
-            this.onReceive("Don't what me! You can be so annoying sometimes");
+            this.onReceive("Well we're getting you new ones cause I want to match");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("You just seem so empty-headed sometimes. We're not going to work");
+              this.onReceive("Acutally I don't know if I want to commit to spending that much time with you");
               this.onReceive("Score: " + this.state.score + " out of 25");
               setTimeout(() => {
                 navigate("Main");
               }, 5000);
             }, 1000);
-          } else if (messages[0].text === "I think it's way too soon for that") {
+          } else if (messages[0].text === "LOL") {
             this.state.score = this.state.score - 25;
-            this.onReceive("You are such a cry baby!");
+            this.onReceive("Really? We're done lol");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("I don't your nagging in my life. I'm leaving you");
+              this.onReceive("Acutally I don't know if I want to commit to spending that much time with you");
               this.onReceive("Score: " + this.state.score + " out of 25");
               setTimeout(() => {
                 navigate("Main");
               }, 5000);
             }, 1000);
-          } else if (messages[0].text === "I can't wait!") {
-            this.onReceive("I just hope you impress them");
+          } else if (messages[0].text === "Anything for you") {
+            this.onReceive("Okay, be prepared to wear pink!");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("My actaully don't like you and I agree. I deserve better. We're done!");
+              this.onReceive("Nevermind I'm perfect the way I am. Minus you");
               this.onReceive("Score: " + this.state.score + " out of 25");
               setTimeout(() => {
                 navigate("Main");
               }, 5000);
             }, 1000);
-          } else if (messages[0].text === "I don't know about this") {
+          } else if (messages[0].text === "I think that's cheesy") {
             this.state.score = this.state.score - 5;
-            this.onReceive("Since when do you know anything, just get here");
+            this.onReceive("And I think you can get over it");
             this.endGame();
             setTimeout(() => {
-              this.onReceive("You're not worth my timne. Don't bother coming. We're through.");
+              this.onReceive("Nevermind I'm perfect the way I am. Minus you");
               this.onReceive("Score: " + this.state.score + " out of 25");
               setTimeout(() => {
                 navigate("Main");
@@ -208,10 +210,10 @@ export default class MargaeryScreen extends Component {
 
           } else if (messages[0].text === "Score") {
             this.onReceive("You're current score is " + this.state.score + " out of 25");
-          }else {
+          } else {
             if (!this._isAlright) {
               this._isAlright = true;
-              this.onReceive('Umm... wow. Okay...');
+              this.onReceive('Can you even type?');
             }
           }
         }
@@ -233,8 +235,8 @@ export default class MargaeryScreen extends Component {
           createdAt: new Date(),
           user: {
             _id: 2,
-            name: 'Margaery',
-            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-c3FJUmNzMVpkcTg',
+            name: 'Danni',
+            avatar: 'https://drive.google.com/uc?id=0B2RuATwqhKZ-NFNjYnZRa2ZNbGc',
           },
         }),
       };
@@ -245,7 +247,7 @@ export default class MargaeryScreen extends Component {
     const {navigate} = this.props.navigation;
     if (this.state.score <= 0) {
       setTimeout(() => {
-        this.onReceive("I need someone who is going to compeltely devote themselves to me and you're not it.");
+        this.onReceive("I need more space. You're just too clingy. We're breaking up");
         this.onReceive("Score: " + this.state.score + " out of 25");
       }, 1000);
       setTimeout(() => {
@@ -349,4 +351,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('Margaery', ()=> MargaeryScreen);
+AppRegistry.registerComponent('Danni', ()=> DanniScreen);

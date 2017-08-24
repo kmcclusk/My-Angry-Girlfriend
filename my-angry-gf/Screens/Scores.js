@@ -8,13 +8,48 @@ import {
   ListView
 } from 'react-native';
 
+import * as firebase from 'firebase';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCwb_wdgjVJYKQf_d83KduDyq4Lhgzj_PE",
+  authDomain: "my-angry-girlfriend-1aafd.firebaseapp.com",
+  databaseURL: "https://my-angry-girlfriend-1aafd.firebaseio.com",
+  projectId: "my-angry-girlfriend-1aafd",
+  storageBucket: "my-angry-girlfriend-1aafd.appspot.com",
+  messagingSenderId: "616482913047"
+};
+
+firebase.initializeApp(firebaseConfig);
+
 export default class Scores extends Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	      isLoading: true
+	      isLoading: true,
 	    }
   }
+
+// componentWillMount() {
+//     firebase.database().ref('users/' + this.props.username).set({
+    
+//   });
+// }
+
+// componentWillMount() {
+//     let initialLoad = true;
+//     this.setState({isLoading: true});
+
+//     firebase.database().ref('example').on('value', (snapshot) => {
+//       this.setState({username: this.props.username});
+
+//       if (initialLoad) {
+//         this.setState({isLoading: false});
+//         initialLoad = false;
+//       }
+//     });
+//   }
+
+
   componentDidMount() {
     return fetch('https://radiant-river-84976.herokuapp.com/Scores')
       .then((response) => response.json())
@@ -61,7 +96,7 @@ export default class Scores extends Component {
         </View>
       );
     }
-console.log(this.props.username)
+  console.log(this.props.username)
    return (
       <View style={styles.scoreContainer}>
         <ListView
